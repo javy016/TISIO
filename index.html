@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="icon" href="./imagenes/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- CABECERA VISUAL -->
+    <header class="header">
+        <div class="logo">
+            <a href="./index.html"><img src="./imagenes/logo_oscuro.png" alt="Logotipo de TISIO" id="logo-tisio"></a>
+        </div>
+
+        <div class="header-icons">
+            <!-- Buscador (ahora a la izquierda del menú hamburguesa) -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon" id="search-icon"></i>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="input-busqueda" placeholder="Buscar producto...">
+                </div>
+            </div>
+
+            <!-- Menú Hamburguesa -->
+            <div class="menu-hamburguesa-container">
+                <button class="btn-hamburguesa" id="btn-menu"><i class="fas fa-bars"></i></button>
+                <div class="menu-dropdown" id="menu-dropdown">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./webs/tienda.html?nuevo=true">Novedades</a>
+                    <a href="./webs/tienda.html?genero=hombre">Hombre</a>
+                    <a href="./webs/tienda.html?genero=mujer">Mujer</a>
+                    <a href="./webs/informacion.html">Sobre nosotros</a>
+                </div>
+            </div>
+
+            <!-- Usuario -->
+            <div id="header-user">
+                <a href="./webs/login.html" aria-label="Iniciar sesión"><i class="far fa-user"></i></a>
+            </div>
+
+            <!-- Carrito Flotante -->
+            <div class="cart-hover-container">
+                <a href="./webs/cesta.html" class="cart-icon" style="text-decoration:none; color:var(--text-main);">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="cart-dropdown">
+                    <h4>Mi Cesta</h4>
+                    <div id="lista-carrito-flotante" style="max-height: 250px; overflow-y: auto;">
+                        <p style="text-align:center; color:var(--text-muted); padding: 20px;">Tu cesta está vacía</p>
+                    </div>
+                    <div class="cart-dropdown-total">
+                        <span>Total:</span>
+                        <span id="total-carrito-flotante">0,00 €</span>
+                    </div>
+                    <a href="./webs/cesta.html" class="btn-ver-cesta">VER CESTA</a>
+                </div>
+            </div>
+
+            <!-- Tema -->
+            <div class="theme-toggle" id="theme-toggle" style="cursor: pointer;">
+                <i class="fas fa-sun active" id="icon-sun"></i>
+                <i class="fas fa-moon" id="icon-moon"></i>
+            </div>
+        </div>
+    </header>
+    <!-- BARRA LATERAL -->
+    <div class="main-container">
+        <button id="btn-toggle-sidebar" style="left: 0;">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="sidebar-wrapper oculto">
+            <aside class="sidebar">
+                <h3>CATEGORÍAS</h3>
+                <div class="filtro-grupo">
+                    <button class="filtro-btn">Todas <i class="fas fa-chevron-down"></i></button>
+                    <ul class="filtro-opciones">
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./webs/tienda.html">Toda la ropa</a></li>
+                        <li><a href="./webs/tienda.html?nuevo=true">Nuevo</a></li>
+                    </ul>
+                </div>
+                <div class="filtro-grupo">
+                    <button class="filtro-btn">Género <i class="fas fa-chevron-down"></i></button>
+                    <ul class="filtro-opciones">
+                        <li><a href="./webs/tienda.html?genero=hombre">Hombre</a></li>
+                        <li><a href="./webs/tienda.html?genero=mujer">Mujer</a></li>
+                    </ul>
+                </div>
+                <div class="filtro-grupo">
+                    <button class="filtro-btn">Tipo <i class="fas fa-chevron-down"></i></button>
+                    <ul class="filtro-opciones">
+                        <li><a href="./webs/tienda.html?tipo=sudaderas">Sudaderas</a></li>
+                        <li><a href="./webs/tienda.html?tipo=cazadoras">Cazadoras</a></li>
+                        <li><a href="./webs/tienda.html?tipo=camisetas">Camisetas</a></li>
+                        <li><a href="./webs/tienda.html?tipo=pantalones">Pantalones</a></li>
+                        <li><a href="./webs/tienda.html?tipo=pijamas">Pijamas</a></li>
+                        <li><a href="./webs/tienda.html?tipo=conjuntos">Conjuntos</a></li>
+                        <li><a href="./webs/tienda.html?tipo=calzado">Calzado</a></li>
+                        <li><a href="./webs/tienda.html?tipo=accesorios">Accesorios</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- CONTENIDO -->
+         <!-- CARRUSEL -->
+        <main class="content expandido">
+            <section class="hero">
+                <div class="hero-image">
+                    <img src="./imagenes/carrusel1.png" alt="Modelo TISIO" id="hero-img">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-text">
+                    <span class="hero-subtitle" id="hero-subtitulo">COLECCIÓN</span>
+                    <h1 id="hero-titulo">URBANA <br> Y AUTÉNTICA</h1>
+                    <p id="hero-texto">Ropa diseñada para quienes viven la calle.</p>
+                </div>
+                <button class="hero-arrow prev" id="hero-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="hero-arrow next" id="hero-next"><i class="fas fa-chevron-right"></i></button>
+                <div class="hero-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+
+            <!--SLIDER/BARRA CATEGORIAS HORIZONTAL-->
+            <div class="category-slider-container">
+                <button class="slider-arrow prev" id="cat-prev"><i class="fas fa-chevron-left"></i></button>
+
+                <section class="category-grid" id="category-grid">
+                    <a href="./webs/tienda.html?tipo=camisetas" class="cat-card">
+                        <img src="./imagenes/categoria/camisetas.jpg" alt="Camisetas">
+                        <div class="cat-info">
+                            <h4>Camisetas</h4>
+                        </div>
+                    </a>
+                    <a href="./webs/tienda.html?tipo=sudaderas" class="cat-card">
+                        <img src="./imagenes/categoria/sudaderas.jpg" alt="Sudaderas">
+                        <div class="cat-info">
+                            <h4>Sudaderas</h4>
+                        </div>
+                    </a>
+                    <a href="./webs/tienda.html?tipo=cazadoras" class="cat-card">
+                        <img src="./imagenes/categoria/cazadoras.jpg" alt="Cazadoras">
+                        <div class="cat-info">
+                            <h4>Cazadoras</h4>
+                        </div>
+                    </a>
+                    <a href="./webs/tienda.html?tipo=pantalones" class="cat-card">
+                        <img src="./imagenes/categoria/pantalones.jpg" alt="Pantalones">
+                        <div class="cat-info">
+                            <h4>Pantalones</h4>
+                        </div>
+                    </a>
+                    <a href="./webs/tienda.html?tipo=conjuntos" class="cat-card">
+                        <img src="./imagenes/categoria/conjuntos.jpg" alt="Conjuntos">
+                        <div class="cat-info">
+                            <h4>Conjuntos</h4>
+                        </div>
+                    </a>
+                    <a href="./webs/tienda.html?tipo=pijamas" class="cat-card">
+                        <img src="./imagenes/categoria/pijamas.jpg" alt="Pijamas">
+                        <div class="cat-info">
+                            <h4>Pijamas</h4>
+                        </div>
+                    </a>
+                    <a href="./webs/tienda.html?tipo=calzado" class="cat-card">
+                        <img src="./imagenes/categoria/zapatillas.jpg" alt="Calzado">
+                        <div class="cat-info">
+                            <h4>Calzado</h4>
+                        </div>
+                    </a>
+                    <a href="./webs/tienda.html?tipo=accesorios" class="cat-card">
+                        <img src="./imagenes/categoria/accesorios.jpg" alt="Accesorios">
+                        <div class="cat-info">
+                            <h4>Accesorios</h4>
+                        </div>
+                    </a>
+                </section>
+
+                <button class="slider-arrow next" id="cat-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <section class="featured-products">
+                <div class="section-header">
+                    <h2>Productos destacados</h2>
+                    <a href="./webs/tienda.html?nuevo=true" class="view-all">Ver todos <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="product-grid" id="destacados-index"></div>
+            </section>
+
+            <!-- CATÁLOGO -->
+            <section class="catalogo-cta">
+                <div class="catalogo-cta-content">
+                    <h2>¿Buscas algo más?</h2>
+                    <p>Explora todo nuestro catálogo. Tenemos ropa para hombre, mujer y unisex. Encuentra tu estilo.</p>
+                    <a href="./webs/tienda.html" class="btn-catalogo">
+                        Ver todo el catálogo <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-features">
+            <div class="feature"><i class="fas fa-truck"></i>
+                <div><strong>Envío rápido</strong>
+                    <p>24/48h en península</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-shield-alt"></i>
+                <div><strong>Pago seguro</strong>
+                    <p>Tu compra protegida</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-undo"></i>
+                <div><strong>Devoluciones fáciles</strong>
+                    <p>Hasta 30 días</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-star"></i>
+                <div><strong>Calidad garantizada</strong>
+                    <p>Ropa duradera y resistente</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-box-open"></i>
+                <div><strong>Envío gratis</strong>
+                    <p>A partir de 60€</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TISIO. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Términos de uso</a>
+                <a href="#">Términos de venta</a>
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de privacidad y cookies</a>
+                <a href="#">Configuración de privacidad y cookies</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/tisioshop/" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@tisioshop.caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@TisioShop-Caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/tema.js"></script>
+    <script src="js/carrusel.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/datos-productos.js"></script>
+    <script src="js/tienda.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/categorias.js"></script>
+</body>
+
+</html>

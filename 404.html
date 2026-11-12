@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOT FOUND</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="icon" href="./imagenes/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos de la página 404 */
+        .error-404 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 60vh;
+            padding: 40px 20px;
+        }
+
+        .error-404 .codigo {
+            font-size: 120px;
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: 5px;
+            text-shadow: 4px 4px 0 var(--border-color); 
+        }
+
+        .error-404 h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .error-404 p {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .error-404 .btn-volver {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .error-404 .btn-volver:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .error-404 .icono-404 {
+            font-size: 60px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- CABECERA-->
+    <div class="header-icons">
+            <!-- Buscador-->
+            <div class="search-container">
+                <i class="fas fa-search search-icon" id="search-icon"></i>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="input-busqueda" placeholder="Buscar producto...">
+                </div>
+            </div>
+
+            <!-- Menú Hamburguesa -->
+            <div class="menu-hamburguesa-container">
+                <button class="btn-hamburguesa" id="btn-menu"><i class="fas fa-bars"></i></button>
+                <div class="menu-dropdown" id="menu-dropdown">
+                    <a href="./index.html">Inicio</a>
+                    <a href="./webs/tienda.html?nuevo=true">Novedades</a>
+                    <a href="./webs/tienda.html?genero=hombre">Hombre</a>
+                    <a href="./webs/tienda.html?genero=mujer">Mujer</a>
+                    <a href="./webs/informacion.html">Sobre nosotros</a>
+                </div>
+            </div>
+
+            <!-- Usuario -->
+            <div id="header-user">
+                <a href="./webs/login.html" aria-label="Iniciar sesión"><i class="far fa-user"></i></a>
+            </div>
+
+            <!-- Carrito -->
+            <div class="cart-hover-container">
+                <a href="./webs/cesta.html" class="cart-icon" style="text-decoration:none; color:var(--text-main);">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="cart-dropdown">
+                    <h4>Mi Cesta</h4>
+                    <div id="lista-carrito-flotante" style="max-height: 250px; overflow-y: auto;">
+                        <p style="text-align:center; color:var(--text-muted); padding: 20px;">Tu cesta está vacía</p>
+                    </div>
+                    <div class="cart-dropdown-total">
+                        <span>Total:</span>
+                        <span id="total-carrito-flotante">0,00 €</span>
+                    </div>
+                    <a href="./webs/cesta.html" class="btn-ver-cesta">VER CESTA</a>
+                </div>
+            </div>
+
+            <!-- Tema -->
+            <div class="theme-toggle" id="theme-toggle" style="cursor: pointer;">
+                <i class="fas fa-sun active" id="icon-sun"></i>
+                <i class="fas fa-moon" id="icon-moon"></i>
+            </div>
+        </div>
+    </header>
+
+
+        <!-- CONTENIDO DE LA PAGINA 404-->
+    <main class="error-404">
+        <div class="icono-404"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="codigo">404</div>
+        <h1>Página no encontrada</h1>
+        <p>Lo sentimos, la página que buscas no existe. Puede que hayas escrito mal la dirección o que el enlace haya sido reemplazado.</p>
+        <a href="./index.html" class="btn-volver">
+            <i class="fas fa-home"></i> Volver al inicio
+        </a>
+    </main>
+
+        <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-features">
+            <div class="feature"><i class="fas fa-truck"></i><div><strong>Envío rápido</strong><p>24/48h en península</p></div></div>
+            <div class="feature"><i class="fas fa-shield-alt"></i><div><strong>Pago seguro</strong><p>Tu compra protegida</p></div></div>
+            <div class="feature"><i class="fas fa-undo"></i><div><strong>Devoluciones fáciles</strong><p>Hasta 30 días</p></div></div>
+            <div class="feature"><i class="fas fa-star"></i><div><strong>Calidad garantizada</strong><p>Ropa duradera y resistente</p></div></div>
+            <div class="feature"><i class="fas fa-box-open"></i><div><strong>Envío gratis</strong><p>A partir de 60€</p></div></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TISIO. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Términos de uso</a>
+                <a href="#">Términos de venta</a>
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de privacidad y cookies</a>
+                <a href="#">Configuración de privacidad y cookies</a>
+            </div>
+             <div class="social-icons">
+                <a href="https://www.instagram.com/tisioshop/" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="www.tiktok.com/@tisioshop.caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@TisioShop-Caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/tema.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/carrito.js"></script>
+</body>
+
+</html>
