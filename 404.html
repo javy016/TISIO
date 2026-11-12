@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOT FOUND</title>
+    <title>TISIO - Página no encontrada</title>
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="icon" href="./imagenes/icono.png">
-    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilos de la página 404 */
+        /* Estilos específicos de la página 404 */
         .error-404 {
             display: flex;
             flex-direction: column;
@@ -27,7 +27,7 @@
             line-height: 1;
             margin-bottom: 20px;
             letter-spacing: 5px;
-            text-shadow: 4px 4px 0 var(--border-color); 
+            text-shadow: 4px 4px 0 var(--border-color);
         }
 
         .error-404 h1 {
@@ -70,14 +70,14 @@
 </head>
 
 <body>
-    <!-- CABECERA-->
+    <!-- CABECERA VISUAL (Igual que el index) -->
     <header class="header">
         <div class="logo">
             <a href="./index.html"><img src="./imagenes/logo_oscuro.png" alt="Logotipo de TISIO" id="logo-tisio"></a>
         </div>
 
         <div class="header-icons">
-            <!-- Buscador -->
+            <!-- Buscador (izquierda del menú) -->
             <div class="search-container">
                 <i class="fas fa-search search-icon" id="search-icon"></i>
                 <div class="search-bar" id="search-bar">
@@ -102,7 +102,7 @@
                 <a href="./webs/login.html" aria-label="Iniciar sesión"><i class="far fa-user"></i></a>
             </div>
 
-            <!-- Carrito -->
+            <!-- Carrito Flotante -->
             <div class="cart-hover-container">
                 <a href="./webs/cesta.html" class="cart-icon" style="text-decoration:none; color:var(--text-main);">
                     <i class="fas fa-shopping-cart"></i>
@@ -129,25 +129,45 @@
         </div>
     </header>
 
-    <!-- CONTENIDO DE LA PAGINA 404 -->
+    <!-- CONTENIDO 404 -->
     <main class="error-404">
         <div class="icono-404"><i class="fas fa-exclamation-triangle"></i></div>
         <div class="codigo">404</div>
         <h1>Página no encontrada</h1>
-        <p>Lo sentimos, la página que buscas no existe. Puede que hayas escrito mal la dirección o que el enlace haya sido reemplazado.</p>
+        <p>Lo sentimos, la página que buscas no existe o ha sido movida. Puede que hayas escrito mal la dirección o que el enlace esté roto.</p>
         <a href="./index.html" class="btn-volver">
             <i class="fas fa-home"></i> Volver al inicio
         </a>
     </main>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- PIE DE PÁGINA (Igual que el index) -->
     <footer class="footer">
         <div class="footer-features">
-            <div class="feature"><i class="fas fa-truck"></i><div><strong>Envío rápido</strong><p>24/48h en península</p></div></div>
-            <div class="feature"><i class="fas fa-shield-alt"></i><div><strong>Pago seguro</strong><p>Tu compra protegida</p></div></div>
-            <div class="feature"><i class="fas fa-undo"></i><div><strong>Devoluciones fáciles</strong><p>Hasta 30 días</p></div></div>
-            <div class="feature"><i class="fas fa-star"></i><div><strong>Calidad garantizada</strong><p>Ropa duradera y resistente</p></div></div>
-            <div class="feature"><i class="fas fa-box-open"></i><div><strong>Envío gratis</strong><p>A partir de 60€</p></div></div>
+            <div class="feature"><i class="fas fa-truck"></i>
+                <div><strong>Envío rápido</strong>
+                    <p>24/48h en península</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-shield-alt"></i>
+                <div><strong>Pago seguro</strong>
+                    <p>Tu compra protegida</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-undo"></i>
+                <div><strong>Devoluciones fáciles</strong>
+                    <p>Hasta 30 días</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-star"></i>
+                <div><strong>Calidad garantizada</strong>
+                    <p>Ropa duradera y resistente</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-box-open"></i>
+                <div><strong>Envío gratis</strong>
+                    <p>A partir de 60€</p>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 TISIO. Todos los derechos reservados.</p>
@@ -159,13 +179,16 @@
                 <a href="#">Configuración de privacidad y cookies</a>
             </div>
             <div class="social-icons">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Síguenos en Instagram">
+                <a href="https://www.instagram.com/tisioshop/" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" title="Síguenos en TikTok">
+                <a href="https://www.tiktok.com/@tisioshop.caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en TikTok">
                     <i class="fab fa-tiktok"></i>
                 </a>
-                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="Síguenos en YouTube">
+                <a href="https://www.youtube.com/@TisioShop-Caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en YouTube">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
@@ -173,10 +196,10 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="./js/tema.js"></script>
-    <script src="./js/menu.js"></script>
-    <script src="./js/auth.js"></script>
-    <script src="./js/carrito.js"></script>
+    <script src="js/tema.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/carrito.js"></script>
 </body>
 
 </html>
