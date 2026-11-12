@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" href="../imagenes/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- CABECERA-->
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html"><img src="../imagenes/logo_oscuro.png" alt="TISIO Logo" id="logo-tisio"></a>
+        </div>
+        <div class="header-icons">
+            <!-- Buscador -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon" id="search-icon"></i>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="input-busqueda" placeholder="Buscar producto...">
+                </div>
+            </div>
+
+            <!-- Menú Hamburguesa -->
+            <div class="menu-hamburguesa-container">
+                <button class="btn-hamburguesa" id="btn-menu"><i class="fas fa-bars"></i></button>
+                <div class="menu-dropdown" id="menu-dropdown">
+                    <a href="../index.html">Inicio</a>
+                    <a href="tienda.html?nuevo=true">Novedades</a>
+                    <a href="tienda.html?genero=hombre">Hombre</a>
+                    <a href="tienda.html?genero=mujer">Mujer</a>
+                    <a href="informacion.html">Sobre nosotros</a>
+                </div>
+            </div>
+
+            <!-- Usuario -->
+            <div id="header-user">
+                <a href="login.html" aria-label="Iniciar sesión"><i class="far fa-user"></i></a>
+            </div>
+
+            <!-- Carrito -->
+            <div class="cart-hover-container">
+                <a href="cesta.html" class="cart-icon" style="text-decoration:none; color:var(--text-main);">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="cart-dropdown">
+                    <h4>Mi Cesta</h4>
+                    <div id="lista-carrito-flotante" style="max-height: 250px; overflow-y: auto;">
+                        <p style="text-align:center; color:var(--text-muted); padding: 20px;">Tu cesta está vacía</p>
+                    </div>
+                    <div class="cart-dropdown-total">
+                        <span>Total:</span>
+                        <span id="total-carrito-flotante">0,00 €</span>
+                    </div>
+                    <a href="cesta.html" class="btn-ver-cesta">VER CESTA</a>
+                </div>
+            </div>
+
+            <!-- Tema -->
+            <div class="theme-toggle" id="theme-toggle" style="cursor: pointer;">
+                <i class="fas fa-sun active" id="icon-sun"></i>
+                <i class="fas fa-moon" id="icon-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO REGISTRO/LOGIN -->
+    <main class="login-wrapper">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <!-- LOGIN -->
+                <div class="flip-card-front">
+                    <div class="login-header">
+                        <h2>Iniciar Sesión</h2>
+                        <p>Bienvenido de nuevo a TISIO</p>
+                    </div>
+                    <!-- novalidate para desactivar los bocadillos nativos del navegador -->
+                    <form class="login-form" id="form-login" novalidate>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="login-email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="input-group password-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="login-password" placeholder="Contraseña" required>
+                            <i class="fas fa-eye toggle-password" id="toggle-password-login"></i>
+                        </div>
+                        <button type="submit" class="btn-login">Entrar</button>
+                        <div class="form-footer">
+                            <a href="#">¿Olvidaste tu contraseña?</a><!-- Demomento no disponible -->
+                        </div>
+                    </form>
+                    <div class="flip-toggle">
+                        <p>¿No tienes cuenta? <span id="btn-flip" style="cursor:pointer; font-weight:bold;">Regístrate aquí</span></p>
+                    </div>
+                </div>
+
+                <!-- REGISTRO -->
+                <div class="flip-card-back">
+                    <div class="login-header">
+                        <h2>Crear Cuenta</h2>
+                        <p>Únete a la comunidad TISIO</p>
+                    </div>
+                    <form class="login-form" id="form-registro" novalidate>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="reg-nombre" placeholder="Nombre de usuario" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="reg-email" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="input-group password-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <!-- Pattern actualizado para aceptar cualquier carácter especial, incluyendo guiones -->
+                            <input type="password" id="reg-password" placeholder="Contraseña" 
+                                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$"
+                                   title="Mínimo 8 caracteres, 1 mayúscula, 1 minúscula, 1 número y 1 símbolo especial." required>
+                            <i class="fas fa-eye toggle-password" id="toggle-password-reg"></i>
+                        </div>
+                        <button type="submit" class="btn-login">Registrarse</button>
+                    </form>
+                    <div class="flip-toggle">
+                        <p>¿Ya tienes cuenta? <span id="btn-flip-back" style="cursor:pointer; font-weight:bold;">Inicia sesión</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIPTS-->
+    <script src="../js/tema.js"></script>
+    <script src="../js/voltear.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

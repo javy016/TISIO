@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFORMACIÓN</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" href="../imagenes/icono.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- CABECERA-->
+    <header class="header">
+        <div class="logo">
+            <a href="../index.html"><img src="../imagenes/logo_oscuro.png" alt="TISIO Logo" id="logo-tisio"></a>
+        </div>
+        <div class="header-icons">
+            <!-- Buscador -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon" id="search-icon"></i>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="input-busqueda" placeholder="Buscar producto...">
+                </div>
+            </div>
+
+            <!-- Menú Hamburguesa -->
+            <div class="menu-hamburguesa-container">
+                <button class="btn-hamburguesa" id="btn-menu"><i class="fas fa-bars"></i></button>
+                <div class="menu-dropdown" id="menu-dropdown">
+                    <a href="../index.html">Inicio</a>
+                    <a href="tienda.html?nuevo=true">Novedades</a>
+                    <a href="tienda.html?genero=hombre">Hombre</a>
+                    <a href="tienda.html?genero=mujer">Mujer</a>
+                    <a href="informacion.html">Sobre nosotros</a>
+                </div>
+            </div>
+
+            <!-- Usuario -->
+            <div id="header-user">
+                <a href="login.html" aria-label="Iniciar sesión"><i class="far fa-user"></i></a>
+            </div>
+
+            <!-- Carrito -->
+            <div class="cart-hover-container">
+                <a href="cesta.html" class="cart-icon" style="text-decoration:none; color:var(--text-main);">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <div class="cart-dropdown">
+                    <h4>Mi Cesta</h4>
+                    <div id="lista-carrito-flotante" style="max-height: 250px; overflow-y: auto;">
+                        <p style="text-align:center; color:var(--text-muted); padding: 20px;">Tu cesta está vacía</p>
+                    </div>
+                    <div class="cart-dropdown-total">
+                        <span>Total:</span>
+                        <span id="total-carrito-flotante">0,00 €</span>
+                    </div>
+                    <a href="cesta.html" class="btn-ver-cesta">VER CESTA</a>
+                </div>
+            </div>
+
+            <!-- Tema -->
+            <div class="theme-toggle" id="theme-toggle" style="cursor: pointer;">
+                <i class="fas fa-sun active" id="icon-sun"></i>
+                <i class="fas fa-moon" id="icon-moon"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="info-container">
+        <!-- SECCIÓN INFORMACIÓN -->
+        <section class="about-section">
+            <h1><i class="fas fa-caret-right"></i> INFORMACIÓN</h1>
+            <p>En <strong>TISIO</strong> creemos que la ropa es mucho más que una prenda: es una forma de expresión.
+                Nacimos en los barrios más humildes de Cáceres, con la idea de crear ropa urbana que combine comodidad,
+                estilo y calidad.</p>
+            <p>Nuestro objetivo es ofrecerte prendas duraderas, con diseños auténticos y a precios accesibles.
+                Trabajamos con materiales de calidad y proveedores locales para asegurarnos de que cada prenda que llega
+                a tus manos está hecha para durar.</p>
+            <p>Si tienes alguna duda, sugerencia o simplemente quieres saludarnos, rellena el formulario de contacto y
+                te responderemos lo antes posible.</p>
+        </section>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="contact-section">
+            <h2>Contacta con nosotros</h2>
+            <p class="subtitle">Rellena el formulario y te responderemos en menos de 24h.</p>
+
+            <form id="form-contacto" class="form-grid" novalidate>
+                <div class="form-group-contact">
+                    <label for="nombre">Nombre *</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" required>
+                    <div class="tooltip-error">El nombre es obligatorio</div>
+                </div>
+
+                <div class="form-group-contact">
+                    <label for="apellido1">Primer apellido *</label>
+                    <input type="text" id="apellido1" placeholder="Tu primer apellido" required>
+                    <div class="tooltip-error">El primer apellido es obligatorio</div>
+                </div>
+
+                <div class="form-group-contact">
+                    <label for="apellido2">Segundo apellido</label>
+                    <input type="text" id="apellido2" placeholder="Tu segundo apellido">
+                </div>
+
+                <div class="form-group-contact">
+                    <label for="email">Correo electrónico (Gmail) *</label>
+                    <input type="email" id="email" placeholder="tucorreo@gmail.com" required>
+                    <div class="tooltip-error">Introduce un correo válido</div>
+                </div>
+
+                <div class="form-group-contact">
+                    <label for="domicilio">Domicilio *</label>
+                    <input type="text" id="domicilio" placeholder="Calle, número, piso..." required>
+                    <div class="tooltip-error">El domicilio es obligatorio</div>
+                </div>
+
+                <div class="form-group-contact">
+                    <label for="cp">Código Postal *</label>
+                    <input type="text" id="cp" placeholder="Ej: 28001" maxlength="5" required>
+                    <div class="tooltip-error">Debe ser un código postal de 5 números</div>
+                </div>
+
+                <div class="form-group-contact full-width">
+                    <label for="mensaje">Mensaje *</label>
+                    <textarea id="mensaje" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                    <div class="tooltip-error">El mensaje debe tener al menos 10 caracteres</div>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer">
+        <div class="footer-features">
+            <div class="feature"><i class="fas fa-truck"></i>
+                <div><strong>Envío rápido</strong>
+                    <p>24/48h en península</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-shield-alt"></i>
+                <div><strong>Pago seguro</strong>
+                    <p>Tu compra protegida</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-undo"></i>
+                <div><strong>Devoluciones fáciles</strong>
+                    <p>Hasta 30 días</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-star"></i>
+                <div><strong>Calidad garantizada</strong>
+                    <p>Ropa duradera y resistente</p>
+                </div>
+            </div>
+            <div class="feature"><i class="fas fa-box-open"></i>
+                <div><strong>Envío gratis</strong>
+                    <p>A partir de 60€</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TISIO. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Términos de uso</a>
+                <a href="#">Términos de venta</a>
+                <a href="#">Aviso legal</a>
+                <a href="#">Política de privacidad y cookies</a>
+                <a href="#">Configuración de privacidad y cookies</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/tisioshop/" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@tisioshop.caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@TisioShop-Caceres" target="_blank" rel="noopener noreferrer"
+                    title="Síguenos en YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS-->
+    <script src="../js/tema.js"></script>
+    <script src="../js/menu.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/contacto.js"></script>
+</body>
+
+</html>
